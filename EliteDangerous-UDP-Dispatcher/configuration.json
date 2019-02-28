@@ -1,0 +1,5 @@
+[
+  {
+    "$type": "EliteDangerous_UDP_Dispatcher.DispatchedEventReceivers.ConsoleReceiver, EliteDangerousUDPDispatcher"
+  }
+]
