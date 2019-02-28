@@ -4,6 +4,7 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -32,10 +33,10 @@ namespace EliteDangerous_UDP_Dispatcher
 
 		EventHandler<UDPJsonLineReceivedEventArgs> fullLineEventHandler;
 
-		public async void SendData(object data)
+		public async void SendData(object data, IPEndPoint receiver)
 		{
 			var dataObj = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data));
-			UDP.SendAsync(dataObj, dataObj.Length);
+			UDP.SendAsync(dataObj, dataObj.Length, receiver);
 		}
 
 		public async Task ReceiveData(CancellationToken token)
@@ -50,6 +51,7 @@ namespace EliteDangerous_UDP_Dispatcher
 				}
 
 				var buffer = await UDP.ReceiveAsync();
+				var remoteInfo = buffer.RemoteEndPoint;
 				var bufferAsString = Encoding.UTF8.GetString(buffer.Buffer);
 				sb.Append(bufferAsString);
 
@@ -57,13 +59,12 @@ namespace EliteDangerous_UDP_Dispatcher
 				{
 					var fullString = sb.ToString().Trim();
 
-					var obj = JsonConvert.DeserializeObject(fullString);
 					sb.Clear();
 
 					fullLineEventHandler.Invoke(this, new UDPJsonLineReceivedEventArgs
 					{
-						JSON = obj,
-						JSONString = fullString
+						JSONString = fullString,
+						RemoteInfo = remoteInfo
 					});
 				}
 				else if (bufferAsString.StartsWith("{", StringComparison.InvariantCultureIgnoreCase) && 
@@ -78,7 +79,8 @@ namespace EliteDangerous_UDP_Dispatcher
 					fullLineEventHandler.Invoke(this, new UDPJsonLineReceivedEventArgs
 					{
 						JSON = obj,
-						JSONString = fullString
+						JSONString = fullString,
+						RemoteInfo = remoteInfo
 					});
 				}
 			}
@@ -91,5 +93,6 @@ namespace EliteDangerous_UDP_Dispatcher
 	{
 		public dynamic JSON { get; set; }
 		public string JSONString { get; set; }
+		public IPEndPoint RemoteInfo { get; set; }
 	}
 }

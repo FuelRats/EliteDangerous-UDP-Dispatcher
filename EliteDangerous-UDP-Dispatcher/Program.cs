@@ -40,13 +40,13 @@ namespace EliteDangerous_UDP_Dispatcher
 
 		static void Udp_FullLineEventHandler(object sender, UDPJsonLineReceivedEventArgs e)
 		{
-			if (e.JSON.Published != null && e.JSON.Published == "EliteDangerous")
+			if (e?.JSON?.Publish == "EliteDangerous")
 			{
 				UDP.SendData(new
 				{
 					Subscribe = true,
 					All = true
-				});
+				}, e.RemoteInfo);
 			}
 
 			Parallel.ForEach(EventReceivers, er =>
