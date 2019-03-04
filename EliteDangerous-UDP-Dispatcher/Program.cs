@@ -22,10 +22,11 @@ namespace EliteDangerous_UDP_Dispatcher
 		public async static Task Main(string[] args)
 		{
 			var events = ConfigManager.LoadEventReceivers();
-
+            
 			EventReceivers.AddRange(events);
 
-			//EventReceivers.Add(new DispatchedEventReceivers.ConsoleReceiver());
+            //EventReceivers.Add(new DispatchedEventReceivers.ConsoleDispatcher());
+            //EventReceivers.Add(new DispatchedEventReceivers.TcpDispatcher("127.0.0.1", 58439));
 			//EventReceivers.Add(new DispatchedEventReceivers.WebhookReceiver("https://webhook.site/6fbfcdf7-628d-40b7-ac6d-cec7956af1e9"));
 
 			Console.CancelKeyPress += SelfDestructAllTheThings;
@@ -47,6 +48,7 @@ namespace EliteDangerous_UDP_Dispatcher
 					Subscribe = true,
 					All = true
 				}, e.RemoteInfo);
+                return;
 			}
 
 			Parallel.ForEach(EventReceivers, er =>

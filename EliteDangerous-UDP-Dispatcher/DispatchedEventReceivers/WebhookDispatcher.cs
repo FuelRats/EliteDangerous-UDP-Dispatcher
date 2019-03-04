@@ -1,18 +1,22 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace EliteDangerous_UDP_Dispatcher.DispatchedEventReceivers
 {
-	public class WebhookReceiver : IDispatchedEventReceiver
+	public class WebhookDispatcher : IDispatchedEventReceiver
 	{
-		public WebhookReceiver(string url)
+        public WebhookDispatcher()
+        {
+            Console.WriteLine("DEBUG: Loaded WebhookDispatcher (from Config)");
+        }
+
+
+        public WebhookDispatcher(string url)
 		{
 			Url = url;
-		}
+            Console.WriteLine("DEBUG: Loaded WebhookDispatcher");
+        }
 
 		public string Url { get; set; }
 

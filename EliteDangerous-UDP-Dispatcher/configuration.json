@@ -1,5 +1,10 @@
 [
   {
-    "$type": "EliteDangerous_UDP_Dispatcher.DispatchedEventReceivers.ConsoleReceiver, EliteDangerousUDPDispatcher"
+    "$type": "EliteDangerous_UDP_Dispatcher.DispatchedEventReceivers.ConsoleDispatcher, EliteDangerousUDPDispatcher"
+  },
+  {
+    "$type": "EliteDangerous_UDP_Dispatcher.DispatchedEventReceivers.TcpDispatcher, EliteDangerousUDPDispatcher",
+    "RemoteHost": "127.0.0.1",
+    "RemotePort": 58439
   }
 ]
