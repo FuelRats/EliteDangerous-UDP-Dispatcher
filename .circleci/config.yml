@@ -6,10 +6,5 @@ jobs:
     working_directory: ~/EliteDangerous-UDP-Dispatcher
     steps:
       - checkout
-      - run:
-        name: Restore packages
-        command: dotnet Restore
-
-      - run:
-        name: Build solution
-        command: dotnet build -c Release
+      - run: dotnet Restore
+      - run: dotnet build -c Release
