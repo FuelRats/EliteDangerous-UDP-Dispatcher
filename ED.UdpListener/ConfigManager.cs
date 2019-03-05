@@ -9,8 +9,13 @@ namespace ED.UdpListener
 	{
 		public static List<IDispatchedEventReceiver> LoadEventReceivers()
 		{
-			var f = File.ReadAllText("configuration.json");
-			return JsonConvert.DeserializeObject<List<IDispatchedEventReceiver>>(f, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto });
+            if (File.Exists("configuration.json"))
+            {
+                var f = File.ReadAllText("configuration.json");
+                return JsonConvert.DeserializeObject<List<IDispatchedEventReceiver>>(f, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto });
+            }
+
+            return new List<IDispatchedEventReceiver>();
 		}
 
 		public static void SaveEventReceivers(List<IDispatchedEventReceiver> receivers)
