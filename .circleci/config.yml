@@ -6,5 +6,11 @@ jobs:
     working_directory: ~/EliteDangerous-UDP-Dispatcher
     steps:
       - checkout
-      - run: dotnet restore
-      - run: dotnet build -c Release
+      - setup_remote_docker: 
+         docker_layer_caching: true
+      - run:
+          name: Restore NuGet packages
+          command: dotnet restore
+      - run: 
+          name: Build solution
+          command: dotnet build -c Release
