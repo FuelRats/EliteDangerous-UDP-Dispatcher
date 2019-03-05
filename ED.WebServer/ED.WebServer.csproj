@@ -8,6 +8,7 @@
     <Authors>NoLifeKing (Chris Gårdenberg)</Authors>
     <Company>The Fuel Rats Mischief</Company>
     <PackageId>ED.Webserver</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
