@@ -1,0 +1,15 @@
+[
+  {
+    "$type": "ED.DispatchEventReceivers.ConsoleDispatcher, ED.DispatchEventReceivers"
+  },
+  {
+    "$type": "ED.DispatchEventReceivers.UdpDispatcher, ED.DispatchEventReceivers",
+    "RemoteHost": "127.0.0.1",
+    "RemotePort": 59295
+  },
+  {
+    "$type": "ED.DispatchEventReceivers.TcpDispatcher, ED.DispatchEventReceivers",
+    "RemoteHost": "127.0.0.1",
+    "RemotePort": 59294
+  }
+]
