@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28621.142
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliteDangerous-UDP-Dispatcher", "EliteDangerous-UDP-Dispatcher\EliteDangerous-UDP-Dispatcher.csproj", "{C8125347-8DCD-4D65-AA5E-B5FEAC4124E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ED.WebServer", "ED.WebServer\ED.WebServer.csproj", "{C8125347-8DCD-4D65-AA5E-B5FEAC4124E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B232F52-8B27-4CC5-A753-D1F9FA91B908}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ED.UdpListener", "ED.UdpListener\ED.UdpListener.csproj", "{0D819237-0549-4DA2-81FB-A90CD48D6B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ED.DispatchEventReceivers", "ED.DispatchEventReceivers\ED.DispatchEventReceivers.csproj", "{E60D7126-45C5-4F0D-AF43-57C240F42E03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +26,14 @@ Global
 		{C8125347-8DCD-4D65-AA5E-B5FEAC4124E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8125347-8DCD-4D65-AA5E-B5FEAC4124E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8125347-8DCD-4D65-AA5E-B5FEAC4124E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D819237-0549-4DA2-81FB-A90CD48D6B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D819237-0549-4DA2-81FB-A90CD48D6B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D819237-0549-4DA2-81FB-A90CD48D6B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D819237-0549-4DA2-81FB-A90CD48D6B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60D7126-45C5-4F0D-AF43-57C240F42E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60D7126-45C5-4F0D-AF43-57C240F42E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60D7126-45C5-4F0D-AF43-57C240F42E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60D7126-45C5-4F0D-AF43-57C240F42E03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

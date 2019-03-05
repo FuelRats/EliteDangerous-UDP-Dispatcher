@@ -1,7 +1,0 @@
-[
-  {
-    "$type": "EliteDangerous_UDP_Dispatcher.DispatchedEventReceivers.UdpDispatcher, EliteDangerousUDPDispatcher",
-    "RemoteHost": "127.0.0.1",
-    "RemotePort": 59295
-  }
-]
