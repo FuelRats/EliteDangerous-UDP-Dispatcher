@@ -3,7 +3,7 @@ Small service to dispatch incoming UDP packets from Elite: Dangerous to multiple
 
 ## Current status
 - Webserver is for show, but will be used to update the registered dispatchers/subscribers
-- Dispatchers for TCP, Webhook/Http POST and Console
+- Dispatchers for TCP, UDP, Webhook/Http POST and Console
 
 ## How to run
 
@@ -18,8 +18,8 @@ And it should fire up a console, that outputs the currently loaded modules (foun
 It's preloaded with the `ConsoleDispatcher` and a `TcpDispatcher` (`127.0.0.1:58439`)
 
 ## Coming Features
+
 Ability to push to these types of clients:
-- UDP
 - WebSocket
 - File
 
