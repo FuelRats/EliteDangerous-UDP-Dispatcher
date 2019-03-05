@@ -18,9 +18,9 @@ namespace ED.UdpListener
         {
             var events = ConfigManager.LoadEventReceivers();
 
-            //EventReceivers.AddRange(events);
+            EventReceivers.AddRange(events);
 
-            EventReceivers.Add(new ConsoleDispatcher());
+            //EventReceivers.Add(new ConsoleDispatcher());
             //EventReceivers.Add(new UdpDispatcher("127.0.0.1", 59295));
             //EventReceivers.Add(new TcpDispatcher("127.0.0.1", 59294));
             //EventReceivers.Add(new WebhookReceiver("https://webhook.site/6fbfcdf7-628d-40b7-ac6d-cec7956af1e9"));
