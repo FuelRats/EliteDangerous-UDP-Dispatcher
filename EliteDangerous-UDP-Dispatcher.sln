@@ -12,9 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ED.UdpListener", "ED.UdpListener\ED.UdpListener.csproj", "{0D819237-0549-4DA2-81FB-A90CD48D6B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ED.UdpListener", "ED.UdpListener\ED.UdpListener.csproj", "{0D819237-0549-4DA2-81FB-A90CD48D6B21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ED.DispatchEventReceivers", "ED.DispatchEventReceivers\ED.DispatchEventReceivers.csproj", "{E60D7126-45C5-4F0D-AF43-57C240F42E03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ED.DispatchEventReceivers", "ED.DispatchEventReceivers\ED.DispatchEventReceivers.csproj", "{E60D7126-45C5-4F0D-AF43-57C240F42E03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".circleci", ".circleci", "{1725428C-3FC9-4AE6-BC2C-DF8A4AC93FF5}"
+	ProjectSection(SolutionItems) = preProject
+		config.yml = config.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +42,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1725428C-3FC9-4AE6-BC2C-DF8A4AC93FF5} = {3B232F52-8B27-4CC5-A753-D1F9FA91B908}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {405B47CE-B845-4FC9-9F41-81DB3FBC2802}
