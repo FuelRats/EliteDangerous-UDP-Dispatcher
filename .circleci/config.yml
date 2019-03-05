@@ -10,6 +10,6 @@ jobs:
         name: Restore packages
         command: dotnet Restore
 
-      - run
+      - run:
         name: Build solution
         command: dotnet build -c Release
