@@ -10,13 +10,12 @@ namespace EliteDangerous_UDP_Dispatcher
 	{
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
 
-		public async static Task Main(string[] args)
+		public static void Main(string[] args)
 		{
 			Console.CancelKeyPress += SelfDestructAllTheThings;
 			var webHost = RunWebHost(cts.Token, args);
 
 			Task.WaitAll(webHost);
-			await Task.CompletedTask;
 		}
 
 		static void SelfDestructAllTheThings(object sender, ConsoleCancelEventArgs e)

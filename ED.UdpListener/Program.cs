@@ -14,14 +14,14 @@ namespace ED.UdpListener
 
         static List<IDispatchedEventReceiver> EventReceivers = new List<IDispatchedEventReceiver>();
 
-        public async static Task Main(string[] args)
+        public static void Main(string[] args)
         {
             var events = ConfigManager.LoadEventReceivers();
 
             //EventReceivers.AddRange(events);
 
             EventReceivers.Add(new ConsoleDispatcher());
-            EventReceivers.Add(new UdpDispatcher("127.0.0.1", 59295));
+            //EventReceivers.Add(new UdpDispatcher("127.0.0.1", 59295));
             //EventReceivers.Add(new TcpDispatcher("127.0.0.1", 59294));
             //EventReceivers.Add(new WebhookReceiver("https://webhook.site/6fbfcdf7-628d-40b7-ac6d-cec7956af1e9"));
 
@@ -30,7 +30,6 @@ namespace ED.UdpListener
             var listener = UDP.ReceiveData(cts.Token);
 
             Task.WaitAll(listener);
-            await Task.CompletedTask;
         }
 
         static void Udp_FullLineEventHandler(object sender, UDPJsonLineReceivedEventArgs e)

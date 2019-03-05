@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Authors>NoLifeKing (Chris Gårdenberg)</Authors>
     <Company>The Fuel Rats Mischief</Company>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
