@@ -124,7 +124,68 @@ Usage:
 
         private static void AddDispatcher(string[] args)
         {
-            throw new NotImplementedException();
+            var type = args[2].ToLower();
+
+            switch(type)
+            {
+                case "console":
+                    EventReceivers.Add(new ConsoleDispatcher());
+                    break;
+                case "tcp":
+                    if(args.Length < 5)
+                    {
+                        Console.WriteLine("Missing arguments: .. config add tcp [host] [port]");
+                        return;
+                    }
+
+                    var tcpHostName = args[3];
+                    var _tcpPort = args[4];
+
+                    if(!int.TryParse(_tcpPort, out int tcpPort))
+                    {
+                        Console.WriteLine("Port must be a number");
+                        return;
+                    }
+
+                    EventReceivers.Add(new TcpDispatcher(tcpHostName, tcpPort));
+                    break;
+                case "udp":
+                    if (args.Length < 5)
+                    {
+                        Console.WriteLine("Missing arguments: .. config add udp [host] [port]");
+                        return;
+                    }
+
+                    var udpHostName = args[3];
+                    var _udpPort = args[4];
+
+                    if (!int.TryParse(_udpPort, out int udpPort))
+                    {
+                        Console.WriteLine("Port must be a number");
+                        return;
+                    }
+
+                    EventReceivers.Add(new UdpDispatcher(udpHostName, udpPort));
+                    break;
+                case "webhook":
+                    if (args.Length < 4)
+                    {
+                        Console.WriteLine("Missing arguments: .. config add webhook [url]");
+                        return;
+                    }
+
+                    var url = args[3];
+                    if(!Uri.TryCreate(url, UriKind.Absolute, out _))
+                    {
+                        Console.WriteLine("Argument not an URL");
+                        return;
+                    }
+
+                    EventReceivers.Add(new WebhookDispatcher(url));
+                    break;
+            }
+
+            ConfigManager.SaveEventReceivers(EventReceivers);
         }
 
         private static void ListDispatchers()
