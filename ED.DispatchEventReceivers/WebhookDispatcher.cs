@@ -33,5 +33,10 @@ namespace ED.DispatchEventReceivers
             }
             await _hc.PostAsync(Url, new StringContent(json, Encoding.UTF8, "application/json"));
 		}
-	}
+
+        public string GetConfigJson()
+        {
+            return "{ Url: '" + Url.Replace("'", "\'") + "' }";
+        }
+    }
 }

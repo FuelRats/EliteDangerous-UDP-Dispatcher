@@ -8,7 +8,13 @@ namespace ED.DispatchEventReceivers
         {
             Console.WriteLine("DEBUG: Loaded ConsoleDispatcher");
         }
-		public void SendItem(string json)
+
+        public string GetConfigJson()
+        {
+            return "{}";
+        }
+
+        public void SendItem(string json)
 		{
 			Console.WriteLine(json);
 		}

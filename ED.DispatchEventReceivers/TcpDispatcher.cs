@@ -58,5 +58,10 @@ namespace ED.DispatchEventReceivers
                 Console.WriteLine(ex.ToString());
             }
         }
+
+        public string GetConfigJson()
+        {
+            return "{ RemoteHost: '" + RemoteHost.Replace("'", "\'") + "', RemotePort: " + RemotePort + " }";
+        }
     }
 }
