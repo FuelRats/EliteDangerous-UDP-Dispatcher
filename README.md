@@ -7,7 +7,7 @@ Small service to dispatch incoming UDP packets from Elite: Dangerous to multiple
 
 ## How to run
 
-- Requires .NET Core 2.1 SDK
+- Requires .NET Core 2.2 SDK
 
 1. `git clone https://github.com/FuelRats/EliteDangerous-UDP-Dispatcher.git`
 2. `cd EliteDangerous-UDP-Dispatcher`
