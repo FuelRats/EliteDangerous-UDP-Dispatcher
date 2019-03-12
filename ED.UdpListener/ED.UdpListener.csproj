@@ -8,7 +8,7 @@
     <LangVersion>default</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RuntimeIdentifiers>win10-x64;linux-x64;linux-arm;os-x64</RuntimeIdentifiers>
-    <RuntimeFrameworkVersion>2.1.1</RuntimeFrameworkVersion>
+    <RuntimeFrameworkVersion>2.1.2</RuntimeFrameworkVersion>
   </PropertyGroup>
 
   <ItemGroup>
