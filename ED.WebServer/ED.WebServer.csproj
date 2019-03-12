@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <LangVersion>default</LangVersion>
     <RootNamespace>ED.WebServer</RootNamespace>
     <AssemblyName>ED.WebServer</AssemblyName>
@@ -10,13 +10,13 @@
     <PackageId>ED.Webserver</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RuntimeIdentifiers>win10-x64;linux-x64;linux-arm;os-x64</RuntimeIdentifiers>
-    <RuntimeFrameworkVersion>2.1.2</RuntimeFrameworkVersion>
+    <!--<RuntimeFrameworkVersion>2.2.3</RuntimeFrameworkVersion>-->
     <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
   
 </Project>
