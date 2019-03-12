@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EliteDangerous_UDP_Dispatcher
+namespace ED.WebServer
 {
 	public class Startup
 	{
@@ -45,10 +45,10 @@ namespace EliteDangerous_UDP_Dispatcher
 			else
 			{
 				app.UseExceptionHandler("/Home/Error");
-				app.UseHsts();
+				//app.UseHsts();
 			}
 
-			app.UseHttpsRedirection();
+			//app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseCookiePolicy();
 

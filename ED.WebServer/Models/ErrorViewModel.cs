@@ -1,6 +1,6 @@
 using System;
 
-namespace EliteDangerous_UDP_Dispatcher.Models
+namespace ED.WebServer.Models
 {
 	public class ErrorViewModel
 	{

@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using EliteDangerous_UDP_Dispatcher.Models;
+using ED.WebServer.Models;
 
-namespace EliteDangerous_UDP_Dispatcher.Controllers
+namespace ED.WebServer.Controllers
 {
 	public class HomeController : Controller
 	{

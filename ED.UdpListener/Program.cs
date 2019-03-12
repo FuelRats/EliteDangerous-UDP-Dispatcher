@@ -32,6 +32,14 @@ namespace ED.UdpListener
             Task.WaitAll(listener);
         }
 
+        public static void ShutDown()
+        {
+            Console.CancelKeyPress -= SelfDestructAllTheThings;
+            cts.Cancel();
+
+            ConfigManager.SaveEventReceivers(EventReceivers);
+        }
+
         static void Udp_FullLineEventHandler(object sender, UDPJsonLineReceivedEventArgs e)
         {
             if (e?.JSON?.Publish == "EliteDangerous")
@@ -52,10 +60,7 @@ namespace ED.UdpListener
 
         static void SelfDestructAllTheThings(object sender, ConsoleCancelEventArgs e)
         {
-            Console.CancelKeyPress -= SelfDestructAllTheThings;
-            cts.Cancel();
-
-            ConfigManager.SaveEventReceivers(EventReceivers);
+            ShutDown();
         }
     }
 }

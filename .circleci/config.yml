@@ -6,8 +6,6 @@ jobs:
     working_directory: ~/EliteDangerous-UDP-Dispatcher
     steps:
       - checkout
-      - setup_remote_docker: 
-         docker_layer_caching: true
       - run:
           name: Restore NuGet packages
           command: dotnet restore

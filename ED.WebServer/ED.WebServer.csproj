@@ -9,11 +9,14 @@
     <Company>The Fuel Rats Mischief</Company>
     <PackageId>ED.Webserver</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RuntimeIdentifiers>win10-x64;linux-x64;linux-arm;os-x64</RuntimeIdentifiers>
+    <RuntimeFrameworkVersion>2.1.1</RuntimeFrameworkVersion>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.1" PrivateAssets="All" />
   </ItemGroup>
-
+  
 </Project>

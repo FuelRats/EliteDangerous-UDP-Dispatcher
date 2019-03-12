@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace EliteDangerous_UDP_Dispatcher
+namespace ED.WebServer
 {
 	public class Program
 	{
@@ -18,10 +18,15 @@ namespace EliteDangerous_UDP_Dispatcher
 			Task.WaitAll(webHost);
 		}
 
+        public static void ShutDown()
+        {
+            Console.CancelKeyPress -= SelfDestructAllTheThings;
+            cts.Cancel();
+        }
+
 		static void SelfDestructAllTheThings(object sender, ConsoleCancelEventArgs e)
 		{
-			Console.CancelKeyPress -= SelfDestructAllTheThings;
-			cts.Cancel();
+            ShutDown();
 		}
 
 		async static Task RunWebHost(CancellationToken token, string[] args) =>
