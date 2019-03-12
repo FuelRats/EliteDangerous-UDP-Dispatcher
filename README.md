@@ -16,7 +16,6 @@ Small service to dispatch incoming UDP packets from Elite: Dangerous to multiple
 5. `dotnet run`
 
 And it should fire up a console, that outputs the currently loaded modules (found in `configuration.json`)
-It's preloaded with the `ConsoleDispatcher` and a `TcpDispatcher` (`127.0.0.1:58439`)
 
 ## Coming Features
 

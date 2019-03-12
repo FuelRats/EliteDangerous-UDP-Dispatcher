@@ -15,15 +15,21 @@ namespace ED.FullUdpPackage
             var udp = Task.Run(() => UdpListener.Program.Main(args));
             var web = Task.Run(() => WebServer.Program.Main(args));
 
-            Task.WaitAll(udp, web);
+            Task.WaitAny(udp, web);
+            ShutDown();
         }
 
         static void SelfDestructAllTheThings(object sender, ConsoleCancelEventArgs e)
         {
+            ShutDown();
+        }
+
+        private static void ShutDown()
+        {
             Console.CancelKeyPress -= SelfDestructAllTheThings;
 
-            UdpListener.Program.ShutDown();
-            WebServer.Program.ShutDown();
+            try { UdpListener.Program.ShutDown(); } catch { }
+            try { WebServer.Program.ShutDown(); } catch { }
 
             cts.Cancel();
         }
