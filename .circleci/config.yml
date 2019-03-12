@@ -1,14 +1,18 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: mcr.microsoft.com/dotnet/core/sdk:2.1
-    working_directory: ~/EliteDangerous-UDP-Dispatcher
-    steps:
-      - checkout
-      - run:
-          name: Restore NuGet packages
-          command: dotnet restore
-      - run: 
-          name: Build solution
-          command: dotnet build -c Release
+    build:
+        machine:
+            docker_layer_caching: true
+        docker:
+            - image: mcr.microsoft.com/dotnet/core/sdk:2.1
+        working_directory: ~/EliteDangerous-UDP-Dispatcher
+        steps:
+            - checkout
+            - setup_remote_docker:
+              docker_layer_caching: true
+            - run:
+                  name: Restore NuGet packages
+                  command: dotnet restore
+            - run:
+                  name: Build solution
+                  command: dotnet build -c Release
