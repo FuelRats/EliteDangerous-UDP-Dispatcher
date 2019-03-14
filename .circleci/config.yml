@@ -12,3 +12,6 @@ jobs:
             - run:
                   name: Build solution
                   command: dotnet build -c Release
+notify:
+    webhooks:
+        - http://dev.localecho.net:7654/announce
